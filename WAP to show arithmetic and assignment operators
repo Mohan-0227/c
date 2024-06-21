@@ -1,42 +1,64 @@
 #include <iostream>
 using namespace std;
 
-void print_numbers() {
-    cout << "Numbers:" << endl;
-    for (int number = 0; number < 10; ++number) {
-        cout << number << " ";
-    }
-    cout << endl << endl;
-}
-
-void print_alphabets() {
-    cout << "Alphabets:" << endl;
-    // Print lowercase alphabets
-    for (char letter = 'a'; letter <= 'z'; ++letter) {
-        cout << letter << " ";
-    }
-    cout << endl;
-    // Print uppercase alphabets
-    for (char letter = 'A'; letter <= 'Z'; ++letter) {
-        cout << letter << " ";
-    }
-    cout << endl << endl;
-}
-
-void print_special_characters() {
-    cout << "Special Characters:" << endl;
-    // Define a set of common special characters
-    char special_characters[] = {'!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', ']', '{', '}', ';', ':', '\'', '"', ',', '.', '<', '>', '/', '?', '|', '\\', '`', '~'};
-    int num_special_chars = sizeof(special_characters) / sizeof(special_characters[0]);
-    for (int i = 0; i < num_special_chars; ++i) {
-        cout << special_characters[i] << " ";
-    }
-    cout << endl << endl;
-}
-
 int main() {
-    print_numbers();
-    print_alphabets();
-    print_special_characters();
+    // Declare variables to store user inputs
+    int num1, num2;
+    
+    // Get input from the user
+    cout << "Enter the first number: ";
+    cin >> num1;
+    cout << "Enter the second number: ";
+    cin >> num2;
+
+    // Demonstrate arithmetic operators
+    cout << "Arithmetic Operations:" << endl;
+    cout << num1 << " + " << num2 << " = " << (num1 + num2) << endl;
+    cout << num1 << " - " << num2 << " = " << (num1 - num2) << endl;
+    cout << num1 << " * " << num2 << " = " << (num1 * num2) << endl;
+    if (num2 != 0) {
+        cout << num1 << " / " << num2 << " = " << (num1 / num2) << endl;
+        cout << num1 << " % " << num2 << " = " << (num1 % num2) << endl;
+    } else {
+        cout << "Division and modulus by zero are not allowed." << endl;
+    }
+
+    // Demonstrate assignment operators
+    cout << "\nAssignment Operations:" << endl;
+    
+    // Using += operator
+    int result = num1;
+    result += num2;
+    cout << num1 << " += " << num2 << " => " << result << endl;
+
+    // Using -= operator
+    result = num1;
+    result -= num2;
+    cout << num1 << " -= " << num2 << " => " << result << endl;
+
+    // Using *= operator
+    result = num1;
+    result *= num2;
+    cout << num1 << " *= " << num2 << " => " << result << endl;
+
+    // Using /= operator
+    if (num2 != 0) {
+        result = num1;
+        result /= num2;
+        cout << num1 << " /= " << num2 << " => " << result << endl;
+    } else {
+        cout << "Assignment division by zero is not allowed." << endl;
+    }
+
+    // Using %= operator
+    if (num2 != 0) {
+        result = num1;
+        result %= num2;
+        cout << num1 << " %= " << num2 << " => " << result << endl;
+    } else {
+        cout << "Assignment modulus by zero is not allowed." << endl;
+    }
+
     return 0;
 }
+
